@@ -48,7 +48,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 2 // Increment 1
-        versionName "1.1.0"
+        versionName "1.2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

@@ -8,8 +8,8 @@ Widget nameMember(String name){
   return Text('$name', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700, fontFamily: "Google"));
 }
 
-Widget postMember(String post){
-  return Text('$post', style: TextStyle(fontSize: 17.0, color: Colors.grey, fontWeight: FontWeight.w500, fontFamily: "Google"));
+Widget rankMember(String rank){
+  return Text('$rank', style: TextStyle(fontSize: 17.0, color: Colors.grey, fontWeight: FontWeight.w500, fontFamily: "Google"));
 }
 
 Widget imageMember(String img){

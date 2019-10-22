@@ -62,6 +62,7 @@ class _EventPageState extends State<EventPage> {
       stream: Firestore.instance.collection("eventos").where("estado",isEqualTo: true).snapshots(),
       builder: (context, snapshot){
         if(snapshot.hasData){
+          events.clear();
           for(int i = 0; i<snapshot.data.documents.length; i++){
             events.add(_createEventsCard(snapshot.data.documents[i]));
           }
