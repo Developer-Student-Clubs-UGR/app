@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:math';
 
-import 'package:dsc_app/src/utils/utils.dart';
+import 'package:dscUGR/src/utils/utils.dart';
 
 class HomePage extends StatefulWidget {
   @override

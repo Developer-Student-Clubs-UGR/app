@@ -1,11 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:dsc_app/src/utils/utils.dart';
-import 'package:dsc_app/src/utils/members.dart';
+import 'package:dscUGR/src/utils/utils.dart';
+import 'package:dscUGR/src/utils/members.dart';
 
 class MemberPage extends StatefulWidget {
   @override
@@ -64,7 +62,7 @@ class _MemberPageState extends State<MemberPage> {
     List<Widget> members = new List();
 
     return StreamBuilder(
-      stream: Firestore.instance.collection('miembros').orderBy('orden').snapshots(),
+      stream: Firestore.instance.collection('miembros').orderBy('orden', descending: false).snapshots(),
       builder: (context, snapshot){
         if(snapshot.hasData){
           for(int i = 0; i<snapshot.data.documents.length; i++){

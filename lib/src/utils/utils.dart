@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 final styleTitle = TextStyle(fontSize: 25.0, fontWeight: FontWeight.w700, fontFamily: "Google");
 final styleSubTitle = TextStyle(fontSize: 23.0, color: Colors.grey, fontWeight: FontWeight.w500, fontFamily: "Google");
 
@@ -35,4 +37,11 @@ Widget firstText(String title, String subtitle){
 
   }
 
-    
+void launchURL(String url) async{
+
+  if(await canLaunch(url)){
+    await launch(url);
+  }
+
+}
+

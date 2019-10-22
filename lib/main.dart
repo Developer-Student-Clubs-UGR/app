@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:dsc_app/src/pages/dsc_page.dart';
+import 'package:dscUGR/src/pages/dsc_page.dart';
 
 void main() => runApp(MyApp());
  

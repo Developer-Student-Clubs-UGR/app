@@ -1,4 +1,4 @@
-name: dsc_app
+name: dscUGR
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -27,9 +27,17 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   firebase_core: ^0.4.0
   cloud_firestore:
   url_launcher: ^5.2.1
+  flutter_launcher_icons: ^0.7.3
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logo.png"
+  adaptative_icon_background: "assets/icons/logo.png"
 
 
 # For information on the generic Dart part of this file, see the

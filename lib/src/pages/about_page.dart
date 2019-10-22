@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:dsc_app/src/utils/utils.dart';
+import 'package:dscUGR/src/utils/utils.dart';
 
 class AboutPage extends StatefulWidget {
   @override

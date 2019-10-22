@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:dsc_app/src/pages/member_page.dart';
-import 'package:dsc_app/src/pages/event_page.dart';
-import 'package:dsc_app/src/pages/about_page.dart';
-import 'package:dsc_app/src/pages/home_page.dart';
+import 'package:dscUGR/src/pages/member_page.dart';
+import 'package:dscUGR/src/pages/event_page.dart';
+import 'package:dscUGR/src/pages/about_page.dart';
+import 'package:dscUGR/src/pages/home_page.dart';
 
 class DSCPage extends StatefulWidget {
   @override

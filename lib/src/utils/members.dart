@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:url_launcher/url_launcher.dart';
+import 'package:dscUGR/src/utils/utils.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 Widget nameMember(String name){
@@ -54,7 +55,7 @@ Widget showNetworks(DocumentSnapshot document){
 Widget _action(String icono, String texto, String url){
 
   return GestureDetector(
-    onTap: () => _launchURL('$url'),
+    onTap: () => launchURL('$url'),
     child: Column(
     children: <Widget>[
       Image(image: AssetImage('$icono'), height: 25.0, width: 25.0),
@@ -65,12 +66,4 @@ Widget _action(String icono, String texto, String url){
   );
 
   }
-
-void _launchURL(String url) async{
-
-  if(await canLaunch(url)){
-    await launch(url);
-  }
-
-}
 
