@@ -57,7 +57,7 @@ class _AboutPageState extends State<AboutPage> {
       padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20),
       child: Text(
         'Los Developer Student Clubs (DSC) son comunidades de estudiantes universitarios, con el objetivo de conciliar la teoría y la práctica creando proyectos útiles para las comunidades locales y organizando talleres para difundir tecnologías.\n\nUniéndose a un DSC, los estudiantes ganan conocimientos en un entorno de aprendizaje uno-a-uno, y construyen soluciones para negocios locales y su comunidad.\n\nCualquier estudiante de grado o posgrado con interés de crecer como desarrollador es bienvenido al equipo.',
-        textAlign: TextAlign.justify, style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w400, fontFamily: "Google"),
+        textAlign: TextAlign.left, style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w400, fontFamily: "Google"),
       ),
     );
 
@@ -74,7 +74,7 @@ class _AboutPageState extends State<AboutPage> {
         child: Column(
           children: <Widget>[
             SizedBox(height: 20),
-            _secondText('Contacto', 'Siguenos'),
+            _secondText('Contacto', 'Síguenos'),
             SizedBox(height: 20),
             _row1(),
             SizedBox(height: 30),

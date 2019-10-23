@@ -6,7 +6,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:dscUGR/src/utils/utils.dart';
 import 'package:dscUGR/src/utils/members.dart';
-import 'package:dscUGR/src/models/member_models.dart';
 
 class MemberPage extends StatefulWidget {
   @override
@@ -19,6 +18,7 @@ class _MemberPageState extends State<MemberPage> {
   final databaseReference = Firestore.instance;
   List<Widget> members = new List();
   List<bool> showNetworksBool = new List();
+  List<bool> showArrowNetworksBool = new List();
   List<double> showNetworksDouble = new List();
   bool _conditionTap = true;
 
@@ -31,9 +31,10 @@ class _MemberPageState extends State<MemberPage> {
         showNetworksBool[index] = !showNetworksBool[index];
       });
 
-      await new Future.delayed(const Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 400));
       
       setState((){
+        showArrowNetworksBool[index] = !showArrowNetworksBool[index];
         _conditionTap = true;
         _changeHeight(index);
       });
@@ -45,9 +46,10 @@ class _MemberPageState extends State<MemberPage> {
       _changeHeight(index);
       });
 
-      await new Future.delayed(const Duration(milliseconds: 500));
+      await new Future.delayed(const Duration(milliseconds: 400));
 
       setState((){
+        showArrowNetworksBool[index] = !showArrowNetworksBool[index];
         _conditionTap = true;
         showNetworksBool[index] = !showNetworksBool[index];
       });
@@ -119,6 +121,7 @@ class _MemberPageState extends State<MemberPage> {
           for(int i = 0; i<snapshot.data.documents.length; i++){
             showNetworksBool.add(false);
             showNetworksDouble.add(0);
+            showArrowNetworksBool.add(true);
             members.add(_createMembersCard(snapshot.data.documents[i],i));
           }
           return _members(members);
@@ -157,31 +160,31 @@ class _MemberPageState extends State<MemberPage> {
             areaMember(document['area']),
             SizedBox(height: 10),
             Visibility(
-              visible: !showNetworksBool[index],
+              visible: showArrowNetworksBool[index],
               child: SizedBox(
                 height: 25,
                 width: 25,
-                child: GestureDetector(
-                  onTap: _conditionTap ? () => _changeShowNetworks(index) : null,
-                  child: FloatingActionButton(
-                    child: Icon(Icons.arrow_drop_down),
-                    backgroundColor: Color.fromRGBO(104, 105, 107, 1.0),
+                child: FloatingActionButton(
+                  onPressed: _conditionTap ? () => _changeShowNetworks(index) : null,
+                  elevation: 0,
+                  child: Icon(Icons.arrow_drop_down),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
                   ),
                 ),
-              ),
             ),
             Visibility(
-              visible: showNetworksBool[index],
+              visible: !showArrowNetworksBool[index],
               child: SizedBox(
                 height: 25,
                 width: 25,
-                child: GestureDetector(
-                  onTap: _conditionTap ? () => _changeShowNetworks(index) : null,
-                  child: FloatingActionButton(
-                    child: Icon(Icons.arrow_drop_up),
-                    backgroundColor: Color.fromRGBO(104, 105, 107, 1.0),
+                child: FloatingActionButton(
+                  onPressed: _conditionTap ? () => _changeShowNetworks(index) : null,
+                  elevation: 0,
+                  child: Icon(Icons.arrow_drop_up),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
                   ),
-                ),
               ),
             ),
             SizedBox(height: 10),

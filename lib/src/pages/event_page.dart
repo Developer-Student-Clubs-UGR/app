@@ -44,7 +44,7 @@ class _EventPageState extends State<EventPage> {
           child: Column(
             children: <Widget>[
               SizedBox(height: 20),
-              firstText('Nuestros eventos','¡Ven y aprende!'),
+              firstText('Eventos','¡Ven y aprende!'),
               SizedBox(height: 20),
             ], 
           )
@@ -86,7 +86,7 @@ class _EventPageState extends State<EventPage> {
   Widget _createEventsCard(DocumentSnapshot document){
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       width: double.infinity,
       child: GestureDetector(
         onTap: (){
